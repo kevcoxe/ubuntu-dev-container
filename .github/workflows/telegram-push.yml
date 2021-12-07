@@ -11,10 +11,10 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          # message: send photo message
-          # photo: tests/github.png
-          sticker: AnimatedSticker.tgs
-          # document: AnimatedSticker.tgs
+          message: send photo message
+          photo: AnimatedSticker.tgs
+          sticker: 💻
+          document: AnimatedSticker.tgs
 
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
