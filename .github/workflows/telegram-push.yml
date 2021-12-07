@@ -6,6 +6,13 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: send default message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          sticker: https://stickers.wiki/static/stickers/redshibainu/file_33747.gif
+
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
