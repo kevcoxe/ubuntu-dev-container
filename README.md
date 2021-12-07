@@ -24,3 +24,7 @@ Also some other things.
 - libreadline-dev
 - libffi-dev
 
+
+##### Info
+
+Pushing changes will allert me in telegram
