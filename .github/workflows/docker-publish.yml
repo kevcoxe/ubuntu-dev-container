@@ -39,9 +39,18 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: send default message
+      - name: send telegram message for finished build
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          sticker: https://stickers.wiki/static/stickers/redshibainu/file_33747.gif
+          message: |
+            ${{ github.actor }} built a new image:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            Ref Name: ${{ github.ref_name }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+
+            Checkout image at docker pull kevcoxe/ubuntu-20.04-heavy-dev:${{ github.ref_name }}
