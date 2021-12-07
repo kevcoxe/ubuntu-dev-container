@@ -52,5 +52,3 @@ jobs:
             Ref Name: ${{ github.ref_name }}
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-
-            Checkout image at docker pull kevcoxe/ubuntu-20.04-heavy-dev:${{ github.ref_name }}
